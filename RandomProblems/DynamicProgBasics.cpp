@@ -3,13 +3,13 @@ using namespace std;
 
 // Normal Recursion
 int fibRec(int num) {
-    if(num == 0 || num == 1) return num;
+    if(num <= 1) return num;
     return fibRec(num-1) + fibRec(num-2);
 }
 
 // Memoization 
 int fibMem(int num, vector<int>&fibs) {
-    if(num == 0 || num == 1) return num;
+    if(num <= 1) return num;
     if(fibs[num] != -1) 
         return fibs[num];
     return fibs[num] = fibMem(num-1,fibs) + fibMem(num-2,fibs);
